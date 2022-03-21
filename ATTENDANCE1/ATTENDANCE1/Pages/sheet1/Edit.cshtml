@@ -1,0 +1,50 @@
+﻿@page
+@model ATTENDANCE1.Pages.sheet1.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>sheets</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="sheets.ID" />
+            <div class="form-group">
+                <label asp-for="sheets.Name" class="control-label"></label>
+                <input asp-for="sheets.Name" class="form-control" />
+                <span asp-validation-for="sheets.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sheets.TimeIn" class="control-label"></label>
+                <input asp-for="sheets.TimeIn" class="form-control" />
+                <span asp-validation-for="sheets.TimeIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sheets.Purpose" class="control-label"></label>
+                <input asp-for="sheets.Purpose" class="form-control" />
+                <span asp-validation-for="sheets.Purpose" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sheets.TimeOut" class="control-label"></label>
+                <input asp-for="sheets.TimeOut" class="form-control" />
+                <span asp-validation-for="sheets.TimeOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
